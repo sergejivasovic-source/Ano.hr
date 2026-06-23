@@ -76,14 +76,14 @@ export function Header() {
             variant="outline" 
             size="sm" 
             className={cn(
-              "border-primary text-primary hover:bg-primary/10",
-              !isScrolled && "bg-white/10 text-white border-white/30 hover:bg-white/20"
+              "border-primary text-primary hover:bg-primary/10 font-bold",
+              !isScrolled && "bg-white text-secondary border-white hover:bg-white/90"
             )}
           >
             <ShieldAlert className="w-4 h-4 mr-2" />
             Prijavi štetu
           </Button>
-          <Button size="sm" className="bg-primary hover:bg-primary/90 text-white">
+          <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-bold">
             <UserCheck className="w-4 h-4 mr-2" />
             MOJ ANO
           </Button>
@@ -131,11 +131,11 @@ export function Header() {
             ))}
           </nav>
           <div className="flex flex-col gap-3 mt-4">
-            <Button variant="outline" className="w-full justify-start border-primary text-primary">
+            <Button variant="outline" className="w-full justify-start border-primary text-primary font-bold">
               <ShieldAlert className="w-4 h-4 mr-2" />
               Prijavi štetu
             </Button>
-            <Button className="w-full justify-start bg-primary text-white">
+            <Button className="w-full justify-start bg-primary text-white font-bold">
               <UserCheck className="w-4 h-4 mr-2" />
               MOJ ANO
             </Button>

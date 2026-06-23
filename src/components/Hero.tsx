@@ -34,12 +34,12 @@ export function Hero() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight font-headline">
-              Šira slika,<br />
-              <span className="text-primary">bolje osiguranje</span>
+              Vaš partner za<br />
+              <span className="text-primary">najbolje osiguranje</span>
             </h1>
             
             <p className="text-xl text-white/80 max-w-xl leading-relaxed">
-              ANO pomaže tvrtkama razumjeti rizike, odabrati optimalna osigurateljna rješenja i dobiti stručnu podršku u ključnim trenucima.
+              ANO pomaže tvrtkama odabrati optimalno osiguranje, razumjeti različlite opcije, osigurati se od rizika. Dajemo vam potpunu podršku 24/7.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -48,7 +48,7 @@ export function Hero() {
                 <ChevronRight className="ml-2 w-5 h-5" />
               </Button>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 h-14 px-6 text-lg rounded-md">
+                <Button variant="outline" size="lg" className="border-white text-white bg-white/10 hover:bg-white hover:text-secondary h-14 px-6 text-lg rounded-md font-bold transition-all">
                   Prijavi štetu
                 </Button>
                 <Button variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/5 h-14 px-6 text-lg rounded-md">
@@ -64,7 +64,7 @@ export function Hero() {
 
           {/* Quick Chat Widget / AI Advisor Teaser */}
           <div className="hidden lg:flex justify-end animate-in fade-in slide-in-from-right duration-1000">
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl w-full max-w-md shadow-2xl">
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl w-full max-md shadow-2xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-primary p-2 rounded-lg">
                   <MessageSquare className="text-white w-6 h-6" />
