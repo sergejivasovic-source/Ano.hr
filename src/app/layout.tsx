@@ -4,7 +4,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'ANO d.o.o. | Brokerski poslovi u osiguranju i reosiguranju',
+  title: 'ANO Insurance Solutions | Brokerski poslovi u osiguranju i reosiguranju',
   description: 'ANO pomaže klijentima razumjeti rizike, pronaći optimalna osigurateljna rješenja i dobiti stručnu podršku.',
 };
 

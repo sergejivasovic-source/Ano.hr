@@ -50,7 +50,7 @@ export function Header() {
             "hidden sm:block font-headline font-bold text-xl tracking-tight transition-colors",
             isScrolled || isMobileMenuOpen ? "text-secondary" : "text-white"
           )}>
-            InsureConnect
+            Insurance Solutions
           </span>
         </Link>
 
