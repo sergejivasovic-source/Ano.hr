@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-business",
+      "description": "Professional business team discussing in a modern office",
+      "imageUrl": "https://picsum.photos/seed/ano1/1200/800",
+      "imageHint": "business office"
+    },
+    {
+      "id": "risk-analysis",
+      "description": "Abstract network representing risk and data",
+      "imageUrl": "https://picsum.photos/seed/ano2/600/400",
+      "imageHint": "abstract data"
+    },
+    {
+      "id": "claims-support",
+      "description": "Support team helping client with documents",
+      "imageUrl": "https://picsum.photos/seed/ano3/600/400",
+      "imageHint": "customer support"
+    },
+    {
+      "id": "news-1",
+      "description": "Insurance market trends graph",
+      "imageUrl": "https://picsum.photos/seed/ano4/400/300",
+      "imageHint": "market trends"
+    }
+  ]
+}
