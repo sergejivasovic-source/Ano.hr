@@ -29,7 +29,7 @@ export default function Home() {
       <AdvisorChat />
 
       {/* Mobile Sticky Bar */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border p-3 flex justify-around items-center">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border p-3 flex justify-around items-center shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
         <Button variant="ghost" className="flex flex-col gap-1 h-auto text-[10px] font-bold">
           <Phone className="w-5 h-5" />
           NAZOVI
@@ -38,8 +38,10 @@ export default function Home() {
           <ShieldAlert className="w-5 h-5" />
           PRIJAVI ŠTETU
         </Button>
-        <Button variant="ghost" className="flex flex-col gap-1 h-auto text-[10px] font-bold">
-          <UserCheck className="w-5 h-5" />
+        <Button variant="ghost" className="flex flex-col gap-1 h-auto text-[10px] font-bold text-primary">
+          <div className="bg-primary/10 p-2 rounded-full mb-1">
+            <UserCheck className="w-5 h-5 text-primary" />
+          </div>
           MOJ ANO
         </Button>
       </div>

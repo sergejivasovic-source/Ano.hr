@@ -4,7 +4,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Shield, ChevronRight, MessageSquare } from "lucide-react";
+import { Shield, ChevronRight, MessageSquare, UserCheck } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Hero() {
@@ -16,7 +16,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 opacity-40">
         <Image
           src={heroImage?.imageUrl || "https://picsum.photos/seed/ano1/1200/800"}
-          alt="ANO Business Support"
+          alt="ANO Insurance Solutions"
           fill
           className="object-cover"
           priority
@@ -43,15 +43,16 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg rounded-md shadow-lg shadow-primary/20">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg rounded-md shadow-lg shadow-primary/20 font-bold">
                 Kontaktirajte nas
                 <ChevronRight className="ml-2 w-5 h-5" />
               </Button>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="outline" size="lg" className="border-white text-white bg-white/10 hover:bg-white hover:text-secondary h-14 px-6 text-lg rounded-md font-bold transition-all">
+                <Button variant="outline" size="lg" className="border-white text-secondary bg-white hover:bg-white/90 h-14 px-6 text-lg rounded-md font-bold transition-all shadow-lg">
                   Prijavi štetu
                 </Button>
-                <Button variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/5 h-14 px-6 text-lg rounded-md">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg rounded-md font-bold shadow-lg shadow-primary/20">
+                  <UserCheck className="w-5 h-5 mr-2" />
                   MOJ ANO
                 </Button>
               </div>
