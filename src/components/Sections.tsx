@@ -103,10 +103,10 @@ export function Process() {
       <div className="container max-w-[1320px] mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center font-headline">Tri koraka do optimalne police</h2>
         <div className="grid md:grid-cols-3 gap-12 relative">
-          <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-white/10 -z-0"></div>
+          <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-white/10 -z-0"></div>
           {steps.map((item, idx) => (
             <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-primary/40">
+              <div className="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-8 group-hover:scale-110 transition-all duration-300 shadow-xl shadow-primary/30 ring-8 ring-primary/10">
                 {item.step}
               </div>
               <h3 className="text-xl font-bold mb-4 font-headline">{item.title}</h3>
