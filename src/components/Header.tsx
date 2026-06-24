@@ -48,50 +48,55 @@ export function Header() {
           : "bg-transparent py-6"
       )}
     >
-      <div className="max-w-[1320px] mx-auto flex items-center justify-between">
+      <div className="max-w-[1320px] mx-auto flex items-center justify-between gap-2">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="bg-primary text-white font-bold text-2xl px-3 py-1 rounded">ANO</div>
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <div className="bg-primary text-white font-bold text-xl sm:text-2xl px-2 sm:px-3 py-1 rounded">ANO</div>
           <span className={cn(
-            "hidden sm:block font-headline font-bold text-xl tracking-tight transition-colors",
+            "hidden md:block font-headline font-bold text-xl tracking-tight transition-colors",
             isScrolled ? "text-secondary dark:text-white" : "text-white"
           )}>
             Insurance Solutions
           </span>
         </Link>
 
-        {/* Right Actions & Hamburger Menu */}
-        <div className="flex items-center gap-4">
-          <div className="hidden lg:flex items-center gap-4">
+        {/* Action Buttons & Hamburger Menu */}
+        <div className="flex items-center gap-1.5 sm:gap-4 flex-1 justify-end">
+          {/* Action Buttons - Always visible, adjusted for mobile */}
+          <div className="flex items-center gap-1.5 sm:gap-4">
             <Button 
               variant="outline" 
               size="sm" 
               className={cn(
-                "border-primary text-primary hover:bg-primary/10 font-bold transition-all",
+                "h-8 sm:h-9 px-2 sm:px-4 text-[10px] sm:text-sm border-primary text-primary hover:bg-primary/10 font-bold transition-all",
                 !isScrolled && "bg-white text-secondary border-white hover:bg-white/90"
               )}
             >
-              <ShieldAlert className="w-4 h-4 mr-2" />
-              Prijavi štetu
+              <ShieldAlert className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+              <span className="hidden xs:inline">Prijavi štetu</span>
+              <span className="xs:hidden">Šteta</span>
             </Button>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/20">
-              <UserCheck className="w-4 h-4 mr-2" />
+            <Button 
+              size="sm" 
+              className="h-8 sm:h-9 px-2 sm:px-4 text-[10px] sm:text-sm bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/20"
+            >
+              <UserCheck className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               MOJ ANO
             </Button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <Sheet>
               <SheetTrigger asChild>
                 <Button 
                   variant="ghost" 
                   size="icon" 
                   className={cn(
-                    "transition-colors hover:bg-primary/10",
+                    "h-8 w-8 sm:h-10 sm:w-10 transition-colors hover:bg-primary/10",
                     isScrolled ? "text-foreground" : "text-white hover:text-white"
                   )}
                 >
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col border-l-primary/10">
@@ -140,18 +145,6 @@ export function Header() {
                       ))}
                     </div>
                   </div>
-                </div>
-
-                {/* Mobile Only CTAs */}
-                <div className="lg:hidden flex flex-col gap-3 pt-6 border-t mt-auto">
-                  <Button variant="outline" className="w-full justify-start border-primary text-primary font-bold">
-                    <ShieldAlert className="w-4 h-4 mr-2" />
-                    Prijavi štetu
-                  </Button>
-                  <Button className="w-full justify-start bg-primary text-white font-bold">
-                    <UserCheck className="w-4 h-4 mr-2" />
-                    MOJ ANO
-                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
