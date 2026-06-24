@@ -21,7 +21,8 @@ import {
   Lock, 
   HeartPulse, 
   MapPin, 
-  LifeBuoy
+  LifeBuoy,
+  ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -29,20 +30,24 @@ import { cn } from "@/lib/utils";
 export function RoleComparison() {
   const roles = [
     {
-      title: "Osiguratelj",
-      description: "Nudi vlastite police i fokusiran je na vlastiti portfelj proizvoda.",
+      title: "Osiguravatelj",
+      description: "Nudi samo vlastite police. Isključivo je fokusiran na prodaju svojih proizvoda.",
       icon: <Building2 className="w-8 h-8" />,
       highlight: false,
     },
     {
       title: "Zastupnik",
-      description: "Zastupa jednog ili više osiguratelja i pomaže pri prodaji polica.",
+      description: "Zastupa jednog ili više osiguravatelja i fokusiran je samo na prodaju polica osiguranja koje zastupa.",
       icon: <Users className="w-8 h-8" />,
       highlight: false,
     },
     {
       title: "Broker",
-      description: "Zastupa interes klijenta, analizira rizike, uspoređuje tržište i pomaže pri odabiru optimalnog rješenja.",
+      description: (
+        <span>
+          <strong>Jedini zastupa interese klijenta,</strong> analizira rizike, uspoređuje ponude svih osiguravatelja i savjetuje u odabiru najboljeg riješenja.
+        </span>
+      ),
       icon: <Search className="w-8 h-8" />,
       highlight: true,
     },
@@ -51,18 +56,18 @@ export function RoleComparison() {
   return (
     <section id="o-nama" className="py-24 bg-background">
       <div className="container max-w-[1320px] mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 font-headline">Zašto raditi s brokerom u osiguranju?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 font-headline text-secondary">Zašto raditi s brokerom u osiguranju?</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {roles.map((role, idx) => (
             <Card key={idx} className={cn(
-              "p-8 transition-all hover:-translate-y-2 border-none shadow-lg",
+              "p-8 transition-all hover:-translate-y-2 border-none shadow-lg text-left",
               role.highlight ? "bg-primary text-white scale-105 ring-4 ring-primary/20" : "bg-accent/50 text-foreground"
             )}>
-              <div className={cn("mb-6 flex justify-center", role.highlight ? "text-white" : "text-primary")}>
+              <div className={cn("mb-6 flex justify-start", role.highlight ? "text-white" : "text-primary")}>
                 {role.icon}
               </div>
               <CardTitle className="text-2xl mb-4 font-headline">{role.title}</CardTitle>
-              <CardContent className={cn("p-0 text-lg", role.highlight ? "text-white/90" : "text-muted-foreground")}>
+              <CardContent className={cn("p-0 text-lg leading-relaxed", role.highlight ? "text-white/90" : "text-muted-foreground")}>
                 {role.description}
               </CardContent>
             </Card>
@@ -149,7 +154,7 @@ export function ServicesGrid() {
       <div className="container max-w-[1320px] mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-headline">Naše usluge</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-headline text-secondary">Naše usluge</h2>
             <p className="text-muted-foreground text-lg">Pružamo cjelovita rješenja za upravljanje rizicima i osiguranjem prilagođena vašem poslovanju.</p>
           </div>
           <Button variant="link" className="text-primary font-bold text-lg p-0 h-auto items-center">
@@ -193,7 +198,7 @@ export function InsuranceTypes() {
   return (
     <section id="osiguranja" className="py-24 bg-accent/20">
       <div className="container max-w-[1320px] mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center font-headline">Osiguranja za različite poslovne rizike</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center font-headline text-secondary">Osiguranja za različite poslovne rizike</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {types.map((type, idx) => (
             <Card key={idx} className="bg-white border-none shadow-sm hover:shadow-md transition-shadow">
@@ -257,9 +262,3 @@ export function DamageClaimCta() {
     </section>
   );
 }
-
-const ChevronRight = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-  </svg>
-);
