@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -83,7 +84,7 @@ export function Process() {
     {
       step: "01",
       title: "Analiziramo vaše rizike",
-      description: "Pažljivo analiziramo vaše poslovanje i potrebe te izloženost rizicima kako bismo dobili jasan kontekst"
+      description: "Pažljivo analiziramo vaše poslovanje i potrebe te izloženost rizicima kako bih smo dobili jasan kontekst"
     },
     {
       step: "02",
@@ -230,21 +231,26 @@ export function DamageClaimCta() {
       <div className="container max-w-[1100px] mx-auto px-4">
         <div className="bg-secondary rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
           <div className="flex-1 p-10 lg:p-16 text-white space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline">Trebate prijaviti štetu?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Želite prijaviti štetu?</h2>
             <p className="text-white/70 text-lg">
-              Odaberite vrstu osiguranja i započnite prijavu štete uz jasne upute i podršku ANO tima. Tu smo da vas vodimo kroz svaki korak.
+              Odaberite vrstu osiguranja i započnite prijavu štete uz jasne upute i podršku ANO tima. Pomoći ćemo vam pri svakom koraku.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 justify-start">Imovina</Button>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 justify-start">Vozila</Button>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 justify-start">Zdravstveno</Button>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 justify-start">Ostalo</Button>
+              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Imovina</Button>
+              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Vozila</Button>
+              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Zdravstveno</Button>
+              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Ostalo</Button>
             </div>
             <div className="pt-6 flex flex-col sm:flex-row items-center gap-6">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-10 w-full sm:w-auto">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-10 w-full sm:w-auto font-bold">
                 Prijavi štetu
               </Button>
-              <span className="text-white/50 text-sm">Niste sigurni odakle krenuti? Kontaktirajte nas.</span>
+              <span className="text-white/50 text-sm">
+                Niste sigurni odakle krenuti?{" "}
+                <Link href="#kontakt" className="text-white hover:text-primary underline transition-colors">
+                  Kontaktirajte nas.
+                </Link>
+              </span>
             </div>
           </div>
           <div className="md:w-1/3 relative min-h-[300px]">
