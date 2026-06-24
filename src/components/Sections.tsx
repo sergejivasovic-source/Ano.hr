@@ -236,10 +236,10 @@ export function DamageClaimCta() {
               Odaberite vrstu osiguranja i započnite prijavu štete uz jasne upute i podršku ANO tima. Pomoći ćemo vam pri svakom koraku.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Imovina</Button>
-              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Vozila</Button>
-              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Zdravstveno</Button>
-              <Button variant="outline" className="border-white/40 text-white hover:bg-white/20 justify-start font-medium">Ostalo</Button>
+              <Button className="bg-white text-secondary hover:bg-white/90 justify-start font-bold border-none shadow-sm transition-all active:scale-95">Imovina</Button>
+              <Button className="bg-white text-secondary hover:bg-white/90 justify-start font-bold border-none shadow-sm transition-all active:scale-95">Vozila</Button>
+              <Button className="bg-white text-secondary hover:bg-white/90 justify-start font-bold border-none shadow-sm transition-all active:scale-95">Zdravstveno</Button>
+              <Button className="bg-white text-secondary hover:bg-white/90 justify-start font-bold border-none shadow-sm transition-all active:scale-95">Ostalo</Button>
             </div>
             <div className="pt-6 flex flex-col sm:flex-row items-center gap-6">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-10 w-full sm:w-auto font-bold">
