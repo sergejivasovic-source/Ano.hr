@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -83,8 +82,8 @@ export function Process() {
   const steps = [
     {
       step: "01",
-      title: "Razumijemo vaše rizike",
-      description: "Analiziramo poslovanje, izloženosti i potrebe kako bismo dobili širu sliku rizika."
+      title: "Analiziramo vaše rizike",
+      description: "Pažljivo analiziramo vaše poslovanje i potrebe te izloženost rizicima kako bismo dobili jasan kontekst"
     },
     {
       step: "02",
