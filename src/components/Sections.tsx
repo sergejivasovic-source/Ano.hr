@@ -101,7 +101,7 @@ export function Process() {
   return (
     <section className="py-24 bg-secondary text-white overflow-hidden">
       <div className="container max-w-[1320px] mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center font-headline">U 3 koraka do optimalne police</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center font-headline">Tri koraka do optimalne police</h2>
         <div className="grid md:grid-cols-3 gap-12 relative">
           <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-white/10 -z-0"></div>
           {steps.map((item, idx) => (
