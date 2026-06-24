@@ -197,7 +197,7 @@ export function InsuranceTypes() {
   return (
     <section id="osiguranja" className="py-24 bg-accent/20">
       <div className="container max-w-[1320px] mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center font-headline text-secondary">Osiguranja za različite poslovne rizike</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center font-headline text-secondary">Širok spektar osiguranja prema vašim potrebama</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {types.map((type, idx) => (
             <Card key={idx} className="bg-white border-none shadow-sm hover:shadow-md transition-shadow">
