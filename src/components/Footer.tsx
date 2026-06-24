@@ -1,9 +1,17 @@
 
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Shield, Linkedin, Facebook, Mail } from "lucide-react";
 
 export function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   const footerLinks = [
     {
       title: "ANO",
@@ -65,7 +73,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <div className="bg-primary text-white font-bold p-1 rounded text-sm">ANO</div>
             <p className="text-white/40 text-sm">
-              © {new Date().getFullYear()} ANO d.o.o. Sva prava pridržana. Ekskluzivni partner Aon grupe.
+              © {year || "2025"} ANO d.o.o. Sva prava pridržana. Ekskluzivni partner Aon grupe.
             </p>
           </div>
           

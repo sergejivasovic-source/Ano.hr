@@ -1,7 +1,7 @@
 
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +10,24 @@ import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export function ContactSection() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <section id="kontakt" className="py-24 bg-white">
+        <div className="container max-w-[1320px] mx-auto px-4">
+          <div className="h-[600px] flex items-center justify-center">
+            <div className="animate-pulse text-muted-foreground">Učitavanje kontakt forme...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="kontakt" className="py-24 bg-white">
       <div className="container max-w-[1320px] mx-auto px-4">
