@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -49,7 +48,7 @@ export function Hero() {
               </Button>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button variant="outline" size="lg" className="border-white text-secondary bg-white hover:bg-white/90 h-14 px-6 text-lg rounded-md font-bold transition-all shadow-lg">
-                  Prijavi štetu
+                  Prijava šteta
                 </Button>
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg rounded-md font-bold shadow-lg shadow-primary/20">
                   <UserCheck className="w-5 h-5 mr-2" />

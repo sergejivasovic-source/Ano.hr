@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { RoleComparison, Process, ServicesGrid, InsuranceTypes, DamageClaimCta } from "@/components/Sections";
@@ -36,7 +35,7 @@ export default function Home() {
         </Button>
         <Button variant="ghost" className="flex flex-col gap-1 h-auto text-[10px] font-bold text-primary">
           <ShieldAlert className="w-5 h-5" />
-          PRIJAVI ŠTETU
+          PRIJAVA ŠTETA
         </Button>
         <Button variant="ghost" className="flex flex-col gap-1 h-auto text-[10px] font-bold text-primary">
           <div className="bg-primary/10 p-2 rounded-full mb-1">

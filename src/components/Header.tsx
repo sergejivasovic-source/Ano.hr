@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -62,7 +61,7 @@ export function Header() {
 
         {/* Action Buttons & Hamburger Menu */}
         <div className="flex items-center gap-1.5 sm:gap-4 flex-1 justify-end">
-          {/* Action Buttons - Always visible, adjusted for mobile */}
+          {/* Action Buttons - Always visible on both mobile and desktop */}
           <div className="flex items-center gap-1.5 sm:gap-4">
             <Button 
               variant="outline" 
@@ -73,8 +72,8 @@ export function Header() {
               )}
             >
               <ShieldAlert className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-              <span className="hidden xs:inline">Prijavi štetu</span>
-              <span className="xs:hidden">Šteta</span>
+              <span className="hidden xs:inline">Prijava šteta</span>
+              <span className="xs:hidden">Prijava šteta</span>
             </Button>
             <Button 
               size="sm" 
