@@ -16,8 +16,10 @@ import {
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -34,6 +36,8 @@ export function Header() {
   ];
 
   const languages = ["HR", "EN", "SI", "BIH"];
+
+  if (!isMounted) return null;
 
   return (
     <header
