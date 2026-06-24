@@ -3,10 +3,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, Globe, ShieldAlert, UserCheck, Share2 } from "lucide-react";
+import { Menu, Globe, ShieldAlert, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
 import {
   Sheet,
   SheetContent,
@@ -17,7 +16,6 @@ import {
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,16 +24,6 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleShare = () => {
-    if (typeof window !== "undefined") {
-      navigator.clipboard.writeText(window.location.href);
-      toast({
-        title: "Poveznica kopirana!",
-        description: "Sada možete zalijepiti i podijeliti link s drugima.",
-      });
-    }
-  };
 
   const navLinks = [
     { name: "O nama", href: "#o-nama" },
@@ -89,19 +77,6 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={handleShare}
-              className={cn(
-                "transition-colors hover:bg-primary/10",
-                isScrolled ? "text-foreground" : "text-white hover:text-white"
-              )}
-              title="Podijeli stranicu"
-            >
-              <Share2 className="h-5 w-5" />
-            </Button>
-
             <Sheet>
               <SheetTrigger asChild>
                 <Button 
@@ -137,13 +112,6 @@ export function Header() {
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                       </Link>
                     ))}
-                    <button
-                      onClick={handleShare}
-                      className="text-lg font-medium p-3 rounded-lg hover:bg-primary/5 hover:text-primary transition-all flex items-center justify-between group text-left w-full"
-                    >
-                      Podijeli stranicu
-                      <Share2 className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
-                    </button>
                   </nav>
 
                   {/* Language Selection */}
@@ -170,7 +138,7 @@ export function Header() {
                   </div>
                 </div>
 
-                {/* Mobile Only CTAs (visible in menu on small screens) */}
+                {/* Mobile Only CTAs */}
                 <div className="lg:hidden flex flex-col gap-3 pt-6 border-t mt-auto">
                   <Button variant="outline" className="w-full justify-start border-primary text-primary font-bold">
                     <ShieldAlert className="w-4 h-4 mr-2" />
