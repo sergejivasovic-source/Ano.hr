@@ -39,7 +39,7 @@ export function Hero() {
             </h1>
             
             <p className="text-xl text-white/80 max-w-xl leading-relaxed">
-              ANO pomaže tvrtkama odabrati optimalno osiguranje, razumjeti različlite opcije, osigurati se od rizika. Dajemo vam potpunu podršku 24/7.
+              ANO pomaže tvrtkama odabrati optimalno osiguranje, razumijeti različite opcije i osigurati poslovanje, imovinu i ljude od rizika. Dajemo vam potpunu podršku 24/7.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
