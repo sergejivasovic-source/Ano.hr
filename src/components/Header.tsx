@@ -3,9 +3,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, Globe, ShieldAlert, UserCheck } from "lucide-react";
+import { Menu, Globe, ShieldAlert, UserCheck, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 import {
   Sheet,
   SheetContent,
@@ -16,6 +17,7 @@ import {
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,16 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleShare = () => {
+    if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(window.location.href);
+      toast({
+        title: "Poveznica kopirana!",
+        description: "Sada možete zalijepiti i podijeliti link s drugima.",
+      });
+    }
+  };
 
   const navLinks = [
     { name: "O nama", href: "#o-nama" },
@@ -76,80 +88,102 @@ export function Header() {
             </Button>
           </div>
 
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className={cn(
-                  "transition-colors hover:bg-primary/10",
-                  isScrolled ? "text-foreground" : "text-white hover:text-white"
-                )}
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col border-l-primary/10">
-              <SheetHeader className="text-left pb-6 border-b">
-                <SheetTitle className="text-2xl font-bold flex items-center gap-2">
-                   <div className="bg-primary text-white px-2 py-0.5 rounded text-sm">ANO</div>
-                   Izbornik
-                </SheetTitle>
-              </SheetHeader>
-              
-              <div className="flex-1 overflow-y-auto py-8 space-y-10">
-                {/* Navigation Links */}
-                <nav className="flex flex-col gap-2">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Navigacija</p>
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      className="text-lg font-medium p-3 rounded-lg hover:bg-primary/5 hover:text-primary transition-all flex items-center justify-between group"
-                    >
-                      {link.name}
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                    </Link>
-                  ))}
-                </nav>
+          <div className="flex items-center gap-2">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={handleShare}
+              className={cn(
+                "transition-colors hover:bg-primary/10",
+                isScrolled ? "text-foreground" : "text-white hover:text-white"
+              )}
+              title="Podijeli stranicu"
+            >
+              <Share2 className="h-5 w-5" />
+            </Button>
 
-                {/* Language Selection */}
-                <div className="space-y-4">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
-                    <Globe className="w-3 h-3" />
-                    Jezik / Language
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {languages.map((lang) => (
-                      <Button 
-                        key={lang} 
-                        variant="ghost" 
-                        size="sm"
-                        className={cn(
-                          "font-bold",
-                          lang === "HR" ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"
-                        )}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className={cn(
+                    "transition-colors hover:bg-primary/10",
+                    isScrolled ? "text-foreground" : "text-white hover:text-white"
+                  )}
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col border-l-primary/10">
+                <SheetHeader className="text-left pb-6 border-b">
+                  <SheetTitle className="text-2xl font-bold flex items-center gap-2">
+                    <div className="bg-primary text-white px-2 py-0.5 rounded text-sm">ANO</div>
+                    Izbornik
+                  </SheetTitle>
+                </SheetHeader>
+                
+                <div className="flex-1 overflow-y-auto py-8 space-y-10">
+                  {/* Navigation Links */}
+                  <nav className="flex flex-col gap-2">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Navigacija</p>
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        className="text-lg font-medium p-3 rounded-lg hover:bg-primary/5 hover:text-primary transition-all flex items-center justify-between group"
                       >
-                        {lang}
-                      </Button>
+                        {link.name}
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                      </Link>
                     ))}
+                    <button
+                      onClick={handleShare}
+                      className="text-lg font-medium p-3 rounded-lg hover:bg-primary/5 hover:text-primary transition-all flex items-center justify-between group text-left w-full"
+                    >
+                      Podijeli stranicu
+                      <Share2 className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+                    </button>
+                  </nav>
+
+                  {/* Language Selection */}
+                  <div className="space-y-4">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
+                      <Globe className="w-3 h-3" />
+                      Jezik / Language
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {languages.map((lang) => (
+                        <Button 
+                          key={lang} 
+                          variant="ghost" 
+                          size="sm"
+                          className={cn(
+                            "font-bold",
+                            lang === "HR" ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"
+                          )}
+                        >
+                          {lang}
+                        </Button>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Mobile Only CTAs (visible in menu on small screens) */}
-              <div className="lg:hidden flex flex-col gap-3 pt-6 border-t mt-auto">
-                <Button variant="outline" className="w-full justify-start border-primary text-primary font-bold">
-                  <ShieldAlert className="w-4 h-4 mr-2" />
-                  Prijavi štetu
-                </Button>
-                <Button className="w-full justify-start bg-primary text-white font-bold">
-                  <UserCheck className="w-4 h-4 mr-2" />
-                  MOJ ANO
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+                {/* Mobile Only CTAs (visible in menu on small screens) */}
+                <div className="lg:hidden flex flex-col gap-3 pt-6 border-t mt-auto">
+                  <Button variant="outline" className="w-full justify-start border-primary text-primary font-bold">
+                    <ShieldAlert className="w-4 h-4 mr-2" />
+                    Prijavi štetu
+                  </Button>
+                  <Button className="w-full justify-start bg-primary text-white font-bold">
+                    <UserCheck className="w-4 h-4 mr-2" />
+                    MOJ ANO
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
