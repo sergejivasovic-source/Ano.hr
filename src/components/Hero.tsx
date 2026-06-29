@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -34,7 +35,7 @@ export function Hero() {
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight font-headline">
               Vaš partner za<br />
-              <span className="text-primary">najbolje osiguranje</span>
+              <span className="text-primary">najbolji odabir osiguranja</span>
             </h1>
             
             <p className="text-xl text-white/80 max-w-xl leading-relaxed">
