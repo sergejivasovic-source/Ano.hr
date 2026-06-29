@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, Globe, ShieldAlert, UserCheck } from "lucide-react";
+import { Menu, Globe, ShieldAlert, UserCheck, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -72,8 +73,7 @@ export function Header() {
               )}
             >
               <ShieldAlert className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-              <span className="hidden xs:inline">Prijava šteta</span>
-              <span className="xs:hidden">Prijava šteta</span>
+              Prijava šteta
             </Button>
             <Button 
               size="sm" 
@@ -121,6 +121,21 @@ export function Header() {
                       </Link>
                     ))}
                   </nav>
+
+                  {/* Search Field */}
+                  <div className="space-y-4">
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
+                      <Search className="w-3 h-3" />
+                      Pretraživanje
+                    </p>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <Input 
+                        placeholder="Upišite pojam..." 
+                        className="pl-10 bg-muted border-none focus-visible:ring-1 focus-visible:ring-primary"
+                      />
+                    </div>
+                  </div>
 
                   {/* Language Selection */}
                   <div className="space-y-4">

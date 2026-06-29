@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -39,7 +38,7 @@ export function Footer() {
       ]
     },
     {
-      title: "Pravno",
+      title: "Pravne informacije",
       links: ["Uvjeti poslovanja", "Pravila privatnosti", "Kolačići", "Dokumenti"]
     }
   ];
